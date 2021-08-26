@@ -32,7 +32,7 @@ const Home = () => {
                     <input type="number" onChange={(e)=>{setmax(e.target.value)}}/>
                     </p>
                     </div>
-                    <button onClick={handleRandom}>Get random number</button>
+                    <button onClick={handleRandom} className="btn">Get random number</button>
 
                 </form>
                 </div>
