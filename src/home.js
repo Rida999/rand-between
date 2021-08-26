@@ -5,7 +5,12 @@ const Home = () => {
     const [min, setmin] = useState(null);
     const [max, setmax] = useState(null);
     const handleRandom=(e)=>{
-          document.getElementById('total').innerHTML=Math.floor(Math.random()*(max-min+1)+min);
+          if(min<0){
+            document.getElementById('total').innerHTML=Math.floor(Math.random()*(max+Math.abs(min)+1));
+          }
+          else{
+            document.getElementById('total').innerHTML=Math.floor(Math.random()*(max-min+1)+min);
+          };
           e.preventDefault();
     };
 
@@ -23,7 +28,7 @@ const Home = () => {
                     <p id="min">Min:<br/>
                     <input type="number" onChange={(e)=>{setmin(e.target.value)}} />
                     </p>
-                    <p>Max:<br/>
+                    <p id="max">Max:<br/>
                     <input type="number" onChange={(e)=>{setmax(e.target.value)}}/>
                     </p>
                     </div>
