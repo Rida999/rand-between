@@ -4,16 +4,19 @@ import "./home.css";
 const Home = () => {
     const [min, setmin] = useState(null);
     const [max, setmax] = useState(null);
-    const handleRandom=()=>{
-          document.getElementById('total').innerHTML=Math.floor(Math.random()*(max-min+1))+min;
+    const handleRandom=(e)=>{
+          document.getElementById('total').innerHTML=Math.floor(Math.random()*(max-min+1)+min);
+          e.preventDefault();
     };
 
     return ( 
         <div className="container">
             <div className="mini">
-                <p>
+            <div className="total">
+                <p className="total">
                     Random number: <span id="total"></span>
                 </p>
+                </div>
                 <div>
                 <form>
                     <div className="min-max">
